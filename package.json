@@ -1,0 +1,43 @@
+{
+  "name": "react-eventist",
+  "version": "0.0.1",
+  "description": "Perform pre/post actions on event handlers",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benm/react-eventist.git"
+  },
+  "keywords": [
+    "event",
+    "middleware",
+    "react",
+    "handler"
+  ],
+  "author": "Ben Magyar <me@benmagyar.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benm/react-eventist/issues"
+  },
+  "homepage": "https://github.com/benm/react-eventist#readme",
+  "files": ["lib"],
+  "peerDependencies": {
+    "react": "^0.14.0 || ^15.0.0-0 || ^16.0.0-0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.42",
+    "@babel/core": "^7.0.0-beta.42",
+    "@babel/preset-env": "^7.0.0-beta.42",
+    "@babel/preset-react": "^7.0.0-beta.42",
+    "babel-core": "^7.0.0-bridge.0",
+    "jest": "^22.4.3",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "prop-types": "^15.6.1"
+  }
+}
