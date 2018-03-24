@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Eventist, createEventist, connectEventist } from '../src';
 import TestUtils from 'react-dom/test-utils';
+import { shallow } from 'enzyme';
+import { Eventist, createEventist, connectEventist } from '../src';
 
 describe('connectEventist', () => {
 
@@ -33,5 +34,11 @@ describe('connectEventist', () => {
     );
     expect(client.context.eventor).toEqual({ pre: [], post: [], });
   });
+
+  it('should call the pre actions');
+
+  it('should call the post actions');
+
+  it('should call the main event handler');
 
 });

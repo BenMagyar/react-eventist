@@ -34,10 +34,13 @@ function connectEventist(WrappedComponent, handler, settings = {}) {
     handle(event) {
       const { pre, post } = this.context[settings.eventistKey];
       return (e) => {
-        this.setState({ pre})
+        this.setState({ pre: true  });
         this.process(pre, e, this.props, () => {
-          event(e);
+          this.setState({ pre: false  });
+          this.props[handler](e);
+          this.setState({ post: true  });
           this.process(post, e, this.props);
+          this.setState({ post: false  });
         });
       }
     }
