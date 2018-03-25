@@ -23,9 +23,9 @@ if no intermediate steps remain.
 
 #### Props
 - `pre` - `Array<Function>` - Array of functions called before the event
-  handler is called.that receive the event.
+  handler is called.
 - `post` - `Array<Function>`- Array of functions called after the event
-  handler is called.that receive the event.
+  handler is called.
 
 #### Example
 ```
