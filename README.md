@@ -32,7 +32,7 @@ if no intermediate steps remain.
 import { Eventist } from 'react-eventist'
 
 const pre = [(event, props, next) => { console.log('before'); next(); }];
-const after = [(event, props, next) => { console.log('after'); next(); }];
+const post = [(event, props, next) => { console.log('after'); next(); }];
 
 ReactDOM.render(
   <Eventist pre={pre} post={post}>
