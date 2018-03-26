@@ -1,6 +1,6 @@
 {
   "name": "react-eventist",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Perform pre/post actions on event handlers",
   "main": "lib/index.js",
   "scripts": {
