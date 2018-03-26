@@ -75,8 +75,8 @@ in any `pre`/`post` actions.
 #### `options`
 - `eventistKey` - `String?` - Optional key to connect to a custom Eventist
   Provider.
-- `mapInProgressToProps` - `Function?` - Optional function to map the `inPre`
-  and `inPost` state values to a prop for the wrapped component.
+- `mapInProgressToProps` - `Function?` - Optional function to map the `inPre`,
+  `inEvent` and `inPost` state values to a prop for the wrapped component.
 
 #### Example
 ```

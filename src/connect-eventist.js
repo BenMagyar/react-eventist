@@ -4,8 +4,8 @@ import eachSeries from 'async/eachSeries';
 
 const defaultSettings = {
   eventistKey: 'eventist',
-  mapInProgressToProps: (inPre, inPost) => (
-    inPre || inPost ? { inProgress: true } : { inProgress: false }
+  mapInProgressToProps: (inPre, inEvent, inPost) => (
+    inPre || inEvent || inPost ? { inProgress: true } : { inProgress: false }
   ),
 };
 
@@ -33,20 +33,20 @@ function connectEventist(WrappedComponent, handler, settings = {}) {
 
     handle(event) {
       const { pre, post } = this.context[settings.eventistKey];
-      this.setState({ pre: true  });
+      this.setState({ inPre: true  });
       this.process(pre, event, this.props, () => {
-        this.setState({ pre: false  });
+        this.setState({ inPre: false, inEvent: true });
         this.props[handler](event);
-        this.setState({ post: true  });
+        this.setState({ inEvent: false, inPost: true });
         this.process(post, event, this.props);
-        this.setState({ post: false  });
+        this.setState({ inPost: false });
       });
     }
 
     render() {
-      const { inPre, inPost } = this.state;
+      const { inPre, inEvent, inPost } = this.state;
       const eventize = { [handler]: this.handle.bind(this), };
-      const inProgress = settings.mapInProgressToProps(inPre, inPost);
+      const inProgress = settings.mapInProgressToProps(inPre, inEvent, inPost);
       return (
         <WrappedComponent
           {...this.props}
